@@ -29,7 +29,8 @@ $pub = array(
 );
 ?>
 <script src="script.js"></script>
-<script>Fierce.go({
+<script>
+Fierce.go({
 	publication: "<?php echo $p; ?>",
 });
 </script>

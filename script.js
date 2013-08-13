@@ -3,6 +3,9 @@
 	Fierce = {
 		name: 'fierce',
 		go: function(options) {
+			/**
+			 * @todo make the height and width work
+			 */
 			if(options.width) {
 				w = ((options.width < 150) ? 150 : options.width) + "px";
 			} else {
@@ -12,6 +15,9 @@
 			//h = ((options.height < 100) ? 100 : options.height || 300) + "px";
 			pub = options.publication || "markets";
 			var s = document.createElement("script");
+			/**
+			 * @todo would have been nice to get this as json
+			 */
 			s.src = "http://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20xml%20WHERE%20url=%22http://www." + this.name + pub + ".com/feed%22&format=json&callback=Fierce._handle";
 			document.getElementsByTagName("head")[0].appendChild(s);
 			this._construct();
@@ -31,6 +37,9 @@
 			this._style();
 		},
 		_style: function() {
+			/**
+			 * @todo turn this into an external stylesheet
+			 */
 			var q = document.createElement("style");
 			q.type = "text/css";
 			var s = "#fierce-widget{width:"+w+";background:#f5f5f5;padding:5px;border:2px solid #000099;position:relative;overflow:hidden;font: 13px/1.231 arial,sans-serif;}";
